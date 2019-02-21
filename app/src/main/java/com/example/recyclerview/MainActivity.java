@@ -11,6 +11,7 @@ import com.example.recyclerview.models.Contact;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
     private ArrayList<Contact> contacts;
 
     @Override
@@ -18,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView rv = findViewById(R.id.rvContact);
-        contacts = Contact.createContactsList (numContacts:10);
+        RecyclerView rv = findViewById(R.id.rvContacts);
+        contacts = Contact.createContactsList (10);
         ContactsAdapter contactsAdapter = new ContactsAdapter(contacts);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager (context:this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager (this);
         rv.setAdapter(contactsAdapter);
         rv.setLayoutManager(layoutManager);
     }

@@ -13,7 +13,7 @@ import com.example.recyclerview.R;
 import com.example.recyclerview.models.Contact;
 
 import java.util.List;
-import java.util.ListIterator;
+
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
 
@@ -26,11 +26,10 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     }
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) { //menghubungkan item_contact.xml ke adapter
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) { //menghubungkan ke adapter
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View contactView = inflater.inflate(R.layout.item_contact,viewGroup,false);
-
+        View contactView = inflater.inflate(R.layout.item_contact, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(contactView);
         return viewHolder;
     }
@@ -62,4 +61,3 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
         }
     }
-}
